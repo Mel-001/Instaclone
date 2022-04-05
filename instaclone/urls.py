@@ -22,4 +22,7 @@ urlpatterns = [
     
     # Users
     path('users/', include(('users.urls', 'users'), namespace='users')), 
+    
+    # Posts
+    path('', include(('posts.urls', 'posts'), namespace='posts')),
 ]
