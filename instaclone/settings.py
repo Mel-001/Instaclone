@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary',
-    'instagram'
+    'instagram',
+    'tinymce'
 ]
 
 MIDDLEWARE = [
