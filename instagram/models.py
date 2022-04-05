@@ -25,3 +25,20 @@ class User(models.Model):
     def __str__(self):
         """Return email."""
         return self.email
+    
+    class Post(models.Model):
+    """Post Model."""
+
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+
+    title = models.CharField(max_length=255)
+    photo = CloudinaryField('image')
+    
+
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        """Return title and username"""
+        return "{} by @{}".format(self.title, self.profile.user.username)
