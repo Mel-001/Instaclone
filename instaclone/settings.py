@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'instagram',
-    'tinymce'
+    'tinymce',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
