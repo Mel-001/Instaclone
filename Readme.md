@@ -4,7 +4,8 @@
 ## Author
 Melonie Langat
 
-## Description instagram clone  app where users can view posted photos and share with others
+## Description 
+Instagram clone  app where users can view posted photos and share with others
 ## Setup/ Installation Requirements
 The application requires the following installations to run
 * python3.8
@@ -33,4 +34,4 @@ Contact me via
 * melonielangat@gmail.com
 
 ## Live link
-https://insta-clone-ig-001.herokuapp.com/
+https://instaclone-p7.herokuapp.com/
