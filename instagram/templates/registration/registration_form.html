@@ -1,97 +1,40 @@
-{% extends 'registration/base.html' %}
+{%extends "registration/base.html"%} 
 {% load bootstrap4 %}
 {% block content %}
-<div class="container-fluid">
- <div class="row">
-  <!-- Empty div -->
-  <div class="col-md-3"></div>
-  <div class="col-md-3 ig">
-    <img src="" style="height: 130%;" alt="">
-  </div>
-  <div class="col-md-3 frm">
-   {% if form.errors %}
-   <p> Password or Username is incorrect </p>
-   {% endif %}
-   <div class="panel panel-default">
-    <div class="panel-body">
-     <div class="brand">Insta Clone</h3>
-     </div>
+<div class="container">
+  <div class="row">
+    <!-- Empty div -->
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      {% if form.errors %}
+        <p> Some Information Might be Incorrect </p>
+      {% endif %}
+      <div class="panel panel-default">
 
+        <div class="panel-heading">
+          <h3 class="text-center">Sign Up</h3>
+        </div>
+        <div class="panel-body">
 
+          <form  action="/accounts/register/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+            </div>
 
-     <form action="/accounts/login/" method="post">
-      {% csrf_token %}
-      {% bootstrap_form form%}
+            <input type="hidden" name="next" value="{{next}}">
 
-      <div class="login-form">
-       <div class="form-group">
-        <input type="submit" class="login btn btn-primary btn-sm" value="Signup">
+          </form>
 
-       </div>
+        </div>
 
-       <input type="hidden" name="next" value="{{next}}">
+      </div>
 
-
-     </form>
     </div>
-
-
-
-   </div>
-
-   <div class="sign-up">
-    Don't have an account?
-    <a href="/accounts/register"><b>Sign Up</b></a>
-   </div>
-
+    <!-- empty div -->
+    <div class="col-md-4"></div>
   </div>
-
- </div>
- <!-- empty div -->
- <div class="col-md-3"></div>
 </div>
-</div>
-<style>
- @import url('//fonts.cdnfonts.com/css/billabong');
-.container-fluid{
-  background-color: #fafafa;
-}
- .brand {
-  font-family: "billabong", sans-serif;
-  font-size: 50px;
-  position: relative;
-  color: #000000;
-  text-align: center;
-  font-weight: 900;
-  margin-top: 5%;
- }
-
- .panel-body {
-  background-color: rgb(255,255,255)
-;
-  border: 1px solid;
-  padding: 2% 10% 20% 10%;
-  margin-top: 10%;
- }
-
- .login {
-  width: 100%;
- }
- .ig{
-   margin-left: -20%;
- }
-.frm{
-  margin-left: 22%;
-  margin-top: 5%;
-}
- .sign-up {
-  background-color: #fff;
-  border: 1px solid;
-  padding: 8%;
-  margin-top: 10%;
-  text-align: center;
-
- }
-</style>
 
 {% endblock %}
